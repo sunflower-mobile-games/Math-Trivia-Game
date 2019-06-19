@@ -1,6 +1,6 @@
 # Project Status
 
-This sample is no longer maintained. It's here for archive purposes only.
+This is a work in progress Maths Game that will eventually include additional locations & DLC
 
 # Actions on Google: Trivia Game using Node.js
 
