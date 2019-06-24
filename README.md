@@ -13,13 +13,15 @@ You can also try out a hosted version of this game at [https://triviatemplate.co
 ### Template Adjustment Steps
 1. More detials can be found [here](https://medium.com/@leonnicholls/google-assistant-trivia-game-742f38cae5de).
 
-### Implementation Steps
+### Deployment Steps
 1. Use the [Actions on Google Console](https://console.actions.google.com) to add a new project with a name of your choosing.
-2. Under *Build a custom app*, click *BUILD* in the Dialogflow box and then click *Create Actions on Dialogflow*.
-3. Click *Save* to save the project.
-4. Click on the gear icon to see the project settings.
+    1. When selecting a template click the relevent category for your app.
+    2. Under *Build* select *Actions*, *Add your first Action*, *Custom Intent*, *Build*
+    3. This will take you to Dialogflow where you will import the intents you need
+4. Click on the gear icon next to your project name to see the project settings.
 5. Select *Export and Import*.
 6. Select *Restore from zip*. Follow the directions to restore from the `TriviaGame.zip` file in this repo.
+    1. You may need to download and extract this repo before you get started
 7. Deploy the fulfillment webhook provided in the `functions` folder using [Google Cloud Functions for Firebase](https://firebase.google.com/docs/functions/) and the static resources needed by the project using [Firebase Hosting](https://firebase.google.com/docs/hosting/):
     1. Follow the instructions to [install the Firebase CLI](https://firebase.google.com/docs/hosting/quickstart#install-the-firebase-cli).
     2. Run `firebase init`, and select to configure `Hosting` and `Functions`. Select the project you've previously created in the Actions on Google Console as default project. In the configuration wizard, accept all the default choices.
