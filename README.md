@@ -24,8 +24,15 @@ You can also try out a hosted version of this game at [https://triviatemplate.co
     1. You may need to download and extract this repo before you get started
 7. Deploy the fulfillment webhook provided in the `functions` folder using [Google Cloud Functions for Firebase](https://firebase.google.com/docs/functions/) and the static resources needed by the project using [Firebase Hosting](https://firebase.google.com/docs/hosting/):
     1. Follow the instructions to [install the Firebase CLI](https://firebase.google.com/docs/hosting/quickstart#install-the-firebase-cli).
-        1. May need to set the firebase alias using "alias firebase="`npm config get prefix`/bin/firebase"
+        1. May need to set the firebase alias using '"alias firebase="`npm config get prefix`/bin/firebase"'
     2. Run `firebase init`, and select to configure `Hosting` and `Functions`. Select the project you've previously created in the Actions on Google Console as default project. In the configuration wizard, accept all the default choices.
+       1. Press space to select 'Functions: Configure and deploy Cloud Functions' & Hosting: Configure and deploy Firebase Hosting sites
+       2. Select a language to write Cloud Funtiond (Javascript or Typescript) - Select JS
+       3. Do you want to use ESLint to catch probable bugs and enforce style y/n? - Select y
+       4. File xxx already exists. Overwite? y/n - Select y
+       5. Do you want to install dependancies with NPM now? - Select y
+       6. What do you want to use as your public directory? - /users/jhowling/firebase
+       7. Configure as single-page app? - Select y
     3. Edit the database data with questions (questions.json) and prompts (prompts.json). Generate a private key using Firebase Settings/Service Accounts, and edit `functions/database.js` with the path to the JSON cert file. Now populate the database: `node database.js`
     4. Run `firebase deploy` and take note of the endpoint where the fulfillment webhook has been published. It should look like `Function URL (triviaGame): https://us-central1-YOUR_PROJECT.cloudfunctions.net/triviaGame`. The command will also deploy the static assets at `https://us-central1-YOUR_PROJECT.cloudfunctions.net/`.
 8. Go back to the Dialogflow console and select *Fulfillment* from the left navigation menu. Enable *Webhook*, set the value of *URL* to the `Function URL` from the previous step, then click *Save*.
